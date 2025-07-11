@@ -1,7 +1,11 @@
 from django.urls import path
-from . import views
+from .views import BookCreateView, BookListView 
+from .views import BookUpdateView, BookDeleteView
 urlpatterns = [
-   path('insert_employee/',views.insert_employee, name='insert_employee'),
-   path('view_employee/', views.view_employee,  name = 'view_employee'),
-# other paths as needed
+    path('', BookListView.as_view(), name='book_list'),
+    path('create/', BookCreateView.as_view(), name='book_create'),
+    path('update/<int:pk>/', BookUpdateView.as_view(), name='book_update'),
+    path('delete/<int:pk>/', BookDeleteView.as_view(), name='book_delete'),
 ]
+
+# Create your models here.

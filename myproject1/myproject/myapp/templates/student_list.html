@@ -1,0 +1,11 @@
+<!-- student_list.html -->
+{%   extends  "master.html"  %}
+{% block title %}student List{% endblock %}
+{%  block content  %}
+    <h1>student List</h1>
+    <ul>
+        {% for studentin student %}
+  <li>{{ student.title }} - {{ student.author }} - {{ student.publication_date }}</li>
+        {% endfor %}
+    </ul>
+ {% endblock %}

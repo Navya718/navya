@@ -1,27 +1,32 @@
 from django.shortcuts import render
 from django.shortcuts import render
-from django.http import HttpResponse 
-from .models import EmployeeModel  
-from .forms import EmployeeForm
-from django.template import loader
-#display form & save data  typed in form 
-def insert_employee(request):
-    context ={}# dictionary for initial data with field names as keys
-    ob_form = EmployeeForm(request.POST or None)
-    if ob_form.is_valid():
-        ob_form.save()
-        return HttpResponse("Data Saved")
-    context['form']= ob_form
-    return render(request, "insert_employee.html", context)
-#view employee data
-def view_employee(request):
-    ob=EmployeeModel.objects.all().values()
-    context={
-        'data':ob
-        }
-    temp=loader.get_template('view_employee.html')
-    return HttpResponse(temp.render(context,request))
+from django.views.generic.edit import CreateView
+from django.views.generic import ListView
+from django.views.generic.edit import UpdateView
+from django.views.generic.edit import DeleteView
+from django.urls import reverse_lazy
+from .models import Book
 
+class BookCreateView(CreateView):
+    model = Book
+    fields = ['title', 'author', 'publication_date']
+    template_name = 'book_form.html'  # Optional: specify custom template
+    success_url = reverse_lazy('book_list')  # URL to redirect to after successful form submission
 
+class BookListView(ListView):
+    model = Book
+    context_object_name = 'books'  # Optional: specify the context variable name in templates
+    template_name = 'book_list.html'  # Optional: specify custom template
 
-# Create your views here.
+class BookUpdateView(UpdateView):
+    model = Book
+    fields = ['title', 'author', 'publication_date']
+    template_name = 'book_form.html'  # Optional: specify custom template
+    success_url = reverse_lazy('book_list')  # URL to redirect to after successful form submission
+
+class BookDeleteView(DeleteView):
+    model = Book
+    template_name = 'book_confirm_delete.html'  # Optional: specify custom template
+    success_url = reverse_lazy('book_list')  # URL to redirect to after successful deletion
+
+ 
