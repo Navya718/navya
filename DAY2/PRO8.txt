@@ -1,0 +1,14 @@
+<html>
+<head>
+<title> file uploadBox</title></head>
+<body> <form>
+<p>name<p>
+<input type="text" name="user" value="enter your name"/>
+<input type="submit" name="submit" value/>
+<input type="reset" name="reset" value/>
+<input type="button" name="ok" value="ok"/>
+<input type="image" name="image button"src"c:/users/navya.jpg/pictures demo.png"/>
+<form></body>
+<html>
+
+

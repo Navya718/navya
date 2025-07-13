@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="script.js"></script>
+    <title>Faculity details</title>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <td>
+          <form onsubmit="event.preventDefault();onFormSubmit();">
+            <h2>Enter faculity details</h2>
+            <div>
+              <label for="facultilyname">Name</label><br />
+              <input
+                type="text"
+                class="facName"
+                id="facName"
+                placeholder="Enter the Faculity Name"
+              />
+            </div>
+            <div>
+              <label for="College">College</label><br />
+              <input
+                type="text"
+                class="facDep"
+                id="facDep"
+                placeholder="Enter the Faculity Department"
+              />
+</div>
+                        </div>
+            <div>
+              <label for="Course">Course</label><br />
+              <input
+                type="text"
+                class="facSub"
+                id="facSub"
+                placeholder="Enter the subject name"
+                         </div>
+ <input type="submit" value="submit" />
+                    <td>
+          <table
+            class="list"
+            id="faclist"
+            style="background-color: darkgoldenrod"
+          >
+            <thead>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Subject</th>
+              <th>Age</th>
+              <th>Place</th>
+              <th>Action</th>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

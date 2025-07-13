@@ -1,0 +1,40 @@
+<html>
+<head>
+<script type=text/javascript>
+function smallestDigit() {
+var
+num=parseInt(document.getElementById("txtNumber").value);
+sd=9;
+while(num>0) {
+rem=num % 10;
+if (rem<sd)sd=rem;
+num=Math.floor(num./10)
+}//while
+document.getElementById("txtAns").value=sd;
+}
+function LargestDigit() {
+var
+num=parseInt(document.getElementById("txtNumber").value);
+sd=9;
+while(num>0) {
+rem=num % 10;
+if (rem<sd) sd=rem;
+num=Math.floor(num./10)
+}//while
+document.getElementById("txtAns").value=sd;
+}
+</body>
+<p>Enter a Number:<input id="txt Number"></p>
+<button on click="sumDigit()"> SumDigits</button>
+<button on click="largestDigit()"> LargestDigits</button>
+<button on click="smallestDigit()"> SmallestDigits</button>
+<button on click="ReverseofDigit()"> ReverseofDigits</button>
+</button>
+<p>sum of digits=<input id="txtAns"></p>
+</body></html>
+
+
+
+
+
+

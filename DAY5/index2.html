@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="script.js"></script>
+    <title>Student details</title>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <td>
+          <form onsubmit="event.preventDefault();onFormSubmit();">
+            <h2>Enter student details</h2>
+            <div>
+              <label for="name">Name</label><br />
+              <input
+                type="text"
+                class="facName"
+                id="facName"
+                placeholder="Enter the student Name"
+              />
+            </div>
+            <div>
+              <label for="course">course</label><br />
+              <input
+                type="text"
+                class="faccou"
+                id="faccou"
+                placeholder="Enter the student course"
+              />
+            </div>
+            <div>
+              <label for="college">college</label><br />
+              <input
+                type="text"
+                class="faccoll"
+                id="faccoll"
+                placeholder="Enter the subject name"
+              />
+            </div>
+                <div>
+              <input type="Submit" value="Submit" />
+            </div>
+          </form>
+        </td>
+        <td>
+          <table
+            class="list"
+            id="faclist"
+            style="background-color: darkgoldenrod"
+          >
+            <thead>
+              <th>Name</th>
+              <th>course</th>
+              <th>college</th>
+                    </thead>
+            <tbody></tbody>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
